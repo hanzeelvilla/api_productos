@@ -23,6 +23,15 @@ module.exports = {
     },
 
     eliminar:(req, res) => {
-        
+        let id = req.params.id
+        mysql.query(`delete from clientes where id = ${id}`, (err, rows, fields) => {
+            if(err){
+                console.log(err)
+                res.json(err)
+            }
+            else{
+                res.json(rows)
+            }
+        })
     }
 }

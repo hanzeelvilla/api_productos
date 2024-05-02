@@ -9,4 +9,8 @@ router.get("/:id", (req, res) => {
     clienteController.buscar(req, res)
 })
 
+router.delete("/:id", (req, res) => {
+    clienteController.eliminar(req, res)
+})
+
 module.exports = router
